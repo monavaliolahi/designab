@@ -1,12 +1,9 @@
 console.log("disegnabloaded");
 
 const sections = document.querySelectorAll("section");
-const navLinks = document.querySelectorAll("nav a");
 
-const backtotopbutton = document.querySelector("#backtotop");
-
-const menuToggle = document.querySelector("#menutoggle");
 const nav = document.querySelector("nav");
+const backtotopbutton = document.querySelector("#backtotop");
 
 const contactForm = document.querySelector("#contactForm");
 const nameInput = document.querySelector("#name");
@@ -100,7 +97,7 @@ window.addEventListener("scroll", () => {
             current = section.getAttribute("id");
         }
     });
-    navLinks.forEach(link => {
+    navItems.forEach(link => {
         link.classList.remove("active");
         if(link.getAttribute("href") === "#" + current){
             link.classList.add("active")
@@ -123,9 +120,13 @@ backtotopbutton.addEventListener("click", () => {
     });
 });
 
+const navLinks = document.querySelector(".nav-links");
+const navItems = document.querySelectorAll(".nav-links a");
+const menuToggle = document.querySelector("#menutoggle");
+
 menuToggle.addEventListener("click", () => {
-    nav.classList.toggle("open");
-    if (nav.classList.contains("open")) {
+    navLinks.classList.toggle("open");
+    if (navLinks.classList.contains("open")) {
         menuToggle.innerHTML = '<i class="fa-solid fa-xmark"></i>';
     }
     else {
@@ -133,12 +134,18 @@ menuToggle.addEventListener("click", () => {
     }
 });
 
- navLinks.forEach(link => {
+navItems.forEach(link => {
+
     link.addEventListener("click", () => {
-        nav.classList.remove("open");
+
+        navLinks.classList.remove("open");
+
         menuToggle.innerHTML = '<i class="fa-solid fa-bars"></i>';
+
     });
- });
+
+});
+
 
  /* ======================================
    Scroll Reveal

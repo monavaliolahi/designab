@@ -421,7 +421,7 @@ section{
     scroll-margin-top: 80px;
     border: 1px solid rgba(255,255,255,.05);
     border-radius: var(--radius);
-    max-width: 800px%;
+    max-width: 1000px;
 
 }
 
@@ -663,7 +663,7 @@ h3{
     width:100%;
     height:100%;
  }
- 
+
  .portfolio-card h3{
     margin-bottom: 15px;
  }
@@ -1119,20 +1119,37 @@ nav{
     position: relative;
 }
 
-nav a{
-    display: none;
+.nav-links{
+    display:none;
 }
 
-nav.open a{
-    display: block;
-    padding: 18px;
-    text-align: center;
+
+.nav-links.open{
+    display:flex;
+    flex-direction:column;
+    gap:0;
+}
+
+
+.nav-links.open a{
+    display:block;
+    padding:18px;
+    text-align:center;
 }
 
 nav.open{
     flex-direction: column;
     align-items: stretch;
     gap: 0;
+    height: auto;
+    overflow: visible;
+}
+
+nav.open a{
+
+    display:block;
+    padding:15px;
+
 }
 
 .hero-content{
