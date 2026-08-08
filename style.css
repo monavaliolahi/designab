@@ -163,7 +163,7 @@ header{
     color: white;
     text-align: center;
     padding-top: 115px;
-    padding-bottom: 120px;
+    padding-bottom: 130px;
     min-height: calc(100vh - 80px);
     display: flex;
     flex-direction: column;
@@ -204,6 +204,7 @@ header p{
     opacity: 0;
     animation: fadeUp 0.8s ease forwards;
     animation-delay: .2s;
+    line-height: 2;
 }
 
 header>*{
@@ -433,8 +434,8 @@ section h2{
 }
 
 h1{
-    font-size: 50px;
-    margin-bottom: 15px;
+    font-size: 45px;
+    margin-bottom: 13px;
     animation: fadeUp 0.8s ease forwards;
 }
 
@@ -589,6 +590,79 @@ h3{
     min-height: 150px;
     resize: none;
  }
+
+
+ .about-container{
+
+    display:flex;
+    
+    justify-content:space-between;
+    
+    align-items:center;
+    
+    gap:80px;
+    
+    margin:60px 0;
+    
+    }
+    
+    .about-text{
+    
+    flex:1;
+    
+    }
+    
+    .about-text h3{
+    
+    font-size:34px;
+    
+    margin-bottom:20px;
+    
+    }
+    
+    .about-text p{
+    
+    line-height:2.2;
+    
+    color:var(--paragraph);
+    
+    }
+    
+    .about-list{
+    
+    flex:1;
+    
+    display:grid;
+    
+    grid-template-columns:repeat(2,1fr);
+    
+    gap:22px;
+    
+    }
+    
+    .about-list div{
+    
+    display:flex;
+    
+    align-items:center;
+    
+    gap:12px;
+    
+    font-size:18px;
+    
+    font-weight:600;
+    
+    }
+    
+    .about-list i{
+    
+    color:var(--primary);
+    
+    font-size:18px;
+    
+    }
+
+
 /* ======================================
     Portfolio
 ========================================= */
@@ -735,33 +809,35 @@ h3{
 }
 
 .stats{
-
-    display:flex;
-    justify-content:center;
-    gap:50px;
-    margin-top:50px;
-    flex-wrap:wrap;
-
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:25px;
+    margin-top:60px;
 }
 
 .stat{
-
+    background:var(--surface);
+    border-radius:18px;
+    padding:35px 20px;
     text-align:center;
+    border:1px solid rgba(255,255,255,.06);
+    transition:.35s;
+}
 
+.stat:hover{
+    transform:translateY(-8px);
+    border-color:var(--primary);
+    box-shadow:0 10px 30px rgba(139,92,246,.18);
 }
 
 .stat h3{
-
-    font-size:48px;
+    font-size:42px;
     color:var(--primary);
     margin-bottom:10px;
-
 }
 
 .stat p{
-
     color:var(--paragraph);
-
 }
 
 /* ==========================
@@ -1094,6 +1170,48 @@ header p{
 .service-container{
     flex-direction: column;
 }
+
+/* ==========================
+   About - Mobile
+========================== */
+
+.about-container{
+    flex-direction: column;
+    gap:40px;
+    text-align:center;
+}
+
+.about-text{
+    width:100%;
+}
+
+.about-text h3{
+    font-size:28px;
+}
+
+.about-text p{
+    font-size:16px;
+    line-height:2;
+}
+
+.about-list{
+    width:100%;
+    grid-template-columns:1fr;
+    gap:18px;
+}
+
+.about-list div{
+    justify-content:center;
+    font-size:16px;
+}
+
+.stats{
+    grid-template-columns:1fr;
+    gap:18px;
+    margin-top:40px;
+}
+
+
 
 /* ======================================
     Portfolio
