@@ -1,0 +1,15 @@
+# Allow all robots to crawl
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://designab.ir/sitemap.xml
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /private/
+Disallow: /tmp/
+Disallow: /logs/
+
+# Crawl-delay for large sites
+Crawl-delay: 2
