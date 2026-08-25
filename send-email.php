@@ -4,7 +4,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = $_POST['email'];
     $message = $_POST['message'];
     
-    $to = "your-email@gmail.com";  // ← ایمیل خودت رو اینجا بذار
+    $to = "mona.valiolahi@gmail.com";  
     $subject = "پیام جدید از سایت Designab";
     $body = "نام: $name\nایمیل: $email\nپیام: $message";
     $headers = "From: $email";
