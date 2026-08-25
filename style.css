@@ -1188,3 +1188,90 @@ small {
         right: 20px;
     }
 }
+
+/* ======================================
+    Share Buttons
+========================================= */
+.share-section {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 30px 0;
+    padding: 20px;
+    background: var(--card-bg);
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-color);
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.share-label {
+    color: var(--text-secondary);
+    font-weight: 500;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.share-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 18px;
+    transition: var(--transition);
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.share-btn:hover {
+    transform: translateY(-3px);
+    color: white;
+}
+
+.share-btn.telegram:hover {
+    background: #0088cc;
+    border-color: #0088cc;
+}
+
+.share-btn.whatsapp:hover {
+    background: #25d366;
+    border-color: #25d366;
+}
+
+.share-btn.twitter:hover {
+    background: #000;
+    border-color: #000;
+}
+
+.share-btn.linkedin:hover {
+    background: #0a66c2;
+    border-color: #0a66c2;
+}
+
+.share-btn.copy:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+}
+
+/* ======================================
+    Progress Bar
+========================================= */
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--primary-light), #a855f7);
+    z-index: 9999;
+    transition: width 0.1s ease;
+    border-radius: 0 10px 10px 0;
+}

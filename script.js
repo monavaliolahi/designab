@@ -217,3 +217,62 @@ contactForm.addEventListener("submit", (event) => {
 });
 
 console.log("✅ All systems ready!");
+
+// ===== کپی لینک =====
+function copyLink() {
+    const url = window.location.href;
+    if (navigator.clipboard) {
+        navigator.clipboard.writeText(url)
+            .then(() => {
+                showToast('✅ لینک با موفقیت کپی شد!');
+            })
+            .catch(() => {
+                copyLinkFallback(url);
+            });
+    } else {
+        copyLinkFallback(url);
+    }
+}
+
+function copyLinkFallback(text) {
+    const textarea = document.createElement('textarea');
+    textarea.value = text;
+    textarea.style.position = 'fixed';
+    textarea.style.opacity = '0';
+    document.body.appendChild(textarea);
+    textarea.select();
+    try {
+        document.execCommand('copy');
+        showToast('✅ لینک با موفقیت کپی شد!');
+    } catch (err) {
+        showToast('❌ کپی ناموفق، لطفاً دستی کپی کنید');
+    }
+    document.body.removeChild(textarea);
+}
+
+function showToast(message) {
+    const toast = document.querySelector('.share-toast') || createToast();
+    toast.textContent = message;
+    toast.classList.add('show');
+    clearTimeout(toast.timeout);
+    toast.timeout = setTimeout(() => {
+        toast.classList.remove('show');
+    }, 2500);
+}
+
+function createToast() {
+    const toast = document.createElement('div');
+    toast.className = 'share-toast';
+    document.body.appendChild(toast);
+    return toast;
+}
+
+// ===== Progress Bar =====
+const progressBar = document.querySelector('#progress-bar');
+
+window.addEventListener('scroll', () => {
+    const scrollTop = window.scrollY;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const progress = (scrollTop / docHeight) * 100;
+    progressBar.style.width = progress + '%';
+});
